@@ -4,3 +4,4 @@ version: 1.0.0
 modules:
   - name: d070317-sapui5-demo
     type: com.sap.hcp.html5
+    path: ./webapp
