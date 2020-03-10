@@ -6,6 +6,24 @@ module.exports = function(config) {
 	config.set({
 
 		frameworks: ['ui5'],
+		
+		plugins: [
+			require('karma-chrome-launcher'),
+		],
+
+		customLaunchers: {
+			Chrome_no_sandbox: {
+			  base: 'Chrome',
+			  flags: [
+				'--headless',
+				'--disable-web-security',
+				'--disable-gpu',
+				// Without a remote debugging port, Google Chrome exits immediately.
+				'--remote-debugging-port=xxxx',
+				'--remote-debugging-address=xxx.x.x.x'
+			  ]
+			}
+		},
 
 		reporters: ['progress'],
 
