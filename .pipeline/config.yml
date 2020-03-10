@@ -10,3 +10,6 @@ steps:
       org: 'cf-dts-integration-de'
       space: 'dev'
       credentialsId: 'CF_CREDENTIALSID'
+  
+  karmaExecuteTests:
+    dockerName: 'karma'
