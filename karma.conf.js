@@ -3,6 +3,11 @@
 module.exports = function(config) {
 	"use strict";
 
+	var webdriverConfig = {
+		hostname: 'selenium',
+		port: 80
+	}
+
 	config.set({
 
 		frameworks: ['ui5'],
