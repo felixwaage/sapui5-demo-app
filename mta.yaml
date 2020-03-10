@@ -3,5 +3,5 @@ ID: com.dts.sapui5.demo.d070317
 version: 1.0.0
 modules:
   - name: d070317-sapui5-demo
-    type: com.sap.hcp.html5
+    type: staticfile
     path: ./webapp
