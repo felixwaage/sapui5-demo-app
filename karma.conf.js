@@ -9,7 +9,9 @@ module.exports = function(config) {
 		
 		plugins: [
 			require('karma-chrome-launcher'),
-			require('karma-coverage')
+			require('karma-coverage'),
+			require('karma-ui5'),
+			require('karma-webdriver-launcher')
 		],
 
 		customLaunchers: {
