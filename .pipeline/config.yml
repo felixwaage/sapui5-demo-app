@@ -15,4 +15,4 @@ steps:
     dockerName: 'karma'
     sidecarImage: 'selenium/standalone-chrome'
     sidecarName: 'selenium'
-    runCommand: 'npm karma-ci'
+    runCommand: 'npm run karma-ci'
