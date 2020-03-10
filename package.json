@@ -17,7 +17,8 @@
     "@openui5/sap.m": "^1.52.5",
     "@openui5/sap.ui.core": "^1.52.5",
     "@openui5/sap.ui.layout": "^1.52.5",
-    "@openui5/themelib_sap_belize": "^1.52.5"
+    "@openui5/themelib_sap_belize": "^1.52.5",
+    "karma-webdriver-launcher": "^1.0.7"
   },
   "devDependencies": {
     "@ui5/cli": "^1.0.0",

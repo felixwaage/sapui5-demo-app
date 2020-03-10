@@ -13,3 +13,5 @@ steps:
   
   karmaExecuteTests:
     dockerName: 'karma'
+    sidecarImage: 'selenium/standalone-chrome'
+    sidecarName: 'selenium'
