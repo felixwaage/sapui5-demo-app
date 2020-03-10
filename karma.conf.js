@@ -9,6 +9,7 @@ module.exports = function(config) {
 		
 		plugins: [
 			require('karma-chrome-launcher'),
+			require('karma-coverage-istanbul-reporter')
 		],
 
 		customLaunchers: {
