@@ -1,0 +1,12 @@
+general:
+steps:
+  mtaBuild:
+    buildTarget: 'CF'
+
+  cloudFoundryDeploy:
+    deployTool: 'mtaDeployPlugin'
+    deployType: 'standard'
+    cloudFoundry:
+      org: 'cf-dts-integration-de'
+      space: 'dev'
+      credentialsId: 'CF_CREDENTIALSID'
