@@ -14,10 +14,10 @@ node() {
         karmaExecuteTests script: this
     }
 
-    stage('Integration Tests'){
-        BackendIntegrationTest = load './.pipline/extension/Integration.groovy'
-        BackendIntegrationTest.call(this);
-    }
+    //stage('Integration Tests'){
+    //    BackendIntegrationTest = load './.pipline/extension/Integration.groovy'
+    //    BackendIntegrationTest.call(this);
+    //}
 
     stage('Deploy') {
         cloudFoundryDeploy script: this
