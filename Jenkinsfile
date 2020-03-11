@@ -1,19 +1,19 @@
 @Library('piper-lib-os') _
 node() {
-    stage('prepare') {
+    stage('Prepare') {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
 
-    stage('build') {
+    stage('Build') {
         mtaBuild script: this
     }
 
-    stage('test'){
+    stage('Unit Tests'){
         karmaExecuteTests script: this
     }
 
-    stage('deploy') {
+    stage('Deploy') {
         cloudFoundryDeploy script: this
     }
 }
