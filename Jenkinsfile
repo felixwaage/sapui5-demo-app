@@ -13,6 +13,10 @@ node() {
         karmaExecuteTests script: this
     }
 
+    stage('Integration Tests'){
+        piperPipelineStageIntegration script: this
+    }
+
     stage('Deploy') {
         cloudFoundryDeploy script: this
     }
