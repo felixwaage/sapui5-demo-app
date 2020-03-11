@@ -1,5 +1,4 @@
-@Library('piper-lib-os') _
-@Library()
+@Library('piper-lib-os')
 
 node() {
     stage('Prepare') {
