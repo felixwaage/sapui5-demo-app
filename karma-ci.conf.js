@@ -37,6 +37,7 @@ module.exports = function (config) {
 
 		browsers: ['ChromeHeadless', 'RemoteChrome'],
 
+		hostname: "karma"
 		customLaunchers: {
 			"RemoteChrome": {
 				base: "WebDriver",
