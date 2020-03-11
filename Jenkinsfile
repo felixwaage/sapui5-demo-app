@@ -1,5 +1,7 @@
 @Library('piper-lib-os') _
-/*node() {
+@Library()
+
+node() {
     stage('Prepare') {
         checkout scm
         setupCommonPipelineEnvironment script:this
@@ -14,12 +16,12 @@
     }
 
     stage('Integration Tests'){
-        piperPipelineStageIntegration script: this
+        BackendIntegrationTest = load './.pipline/extension/Integration.groovy'
+        BackendIntegrationTest.call(this);
     }
 
     stage('Deploy') {
         cloudFoundryDeploy script: this
     }
-}*/
+}
 
-piperPipeline script: this
