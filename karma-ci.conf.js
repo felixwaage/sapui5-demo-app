@@ -35,7 +35,7 @@ module.exports = function (config) {
 
 		browserNoActivityTimeout: 30000,
 
-		browsers: ['ChromeHeadless', 'RemoteChrome'],
+		browsers: ['RemoteChrome'],
 
 		hostname: "karma",
 		customLaunchers: {
