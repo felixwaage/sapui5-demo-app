@@ -5,19 +5,19 @@ node() {
         setupCommonPipelineEnvironment script:this
     }
 
-    stage('Build') {
+    /*stage('Build') {
         mtaBuild script: this
     }
 
     stage('Unit Tests'){
         karmaExecuteTests script: this
-    }
+    }*/
 
     stage('Integration Tests'){
         piperPipelineStageIntegration script: this
     }
 
-    stage('Deploy') {
+    /*stage('Deploy') {
         cloudFoundryDeploy script: this
-    }
+    }*/
 }
