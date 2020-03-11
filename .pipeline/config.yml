@@ -12,7 +12,6 @@ steps:
       credentialsId: 'CF_CREDENTIALSID'
   
   karmaExecuteTests:
-    dockerImage: 'amio/node-chrome'
     dockerName: 'karma'
     sidecarImage: 'selenium/standalone-chrome'
     sidecarName: 'selenium'

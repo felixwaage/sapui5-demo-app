@@ -1,6 +1,6 @@
 /* global module require*/
 
-module.exports = function(config) {
+module.exports = function (config) {
 	"use strict";
 
 	require("./karma.conf")(config);
@@ -13,8 +13,7 @@ module.exports = function(config) {
 
 		coverageReporter: {
 			includeAllSources: true,
-			reporters: [
-				{
+			reporters: [{
 					type: 'html',
 					dir: 'coverage'
 				},
@@ -23,12 +22,12 @@ module.exports = function(config) {
 				}
 			],
 			check: {
-				global: {
+				/*global: {
 					statements: 80,
 					branches: 80,
 					functions: 70,
 					lines: 80
-				}
+				}*/
 			}
 		},
 
@@ -36,7 +35,20 @@ module.exports = function(config) {
 
 		browserNoActivityTimeout: 30000,
 
-		browsers: ['ChromeHeadless'],
+		browsers: ['ChromeHeadless', 'RemoteChrome'],
+
+		customLaunchers: {
+			"RemoteChrome": {
+				base: "WebDriver",
+				config: {
+					hostname: "selenium",
+					port: 4444
+				},
+				browserName: "chrome",
+				name: "Karma",
+				pseudoActivityInterval: 30000
+			}
+		},
 
 		singleRun: true
 	});
