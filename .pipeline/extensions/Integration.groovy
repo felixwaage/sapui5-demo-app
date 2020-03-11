@@ -1,4 +1,4 @@
-void call(Map params) {
+void call(params) {
   //access stage name
   echo "Start - Extension for stage: ${params.stageName}"
 
