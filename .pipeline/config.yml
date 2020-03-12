@@ -1,4 +1,6 @@
 general:
+  buildTool: mta
+  verbose: true
 steps:
   mtaBuild:
     buildTarget: 'CF'
