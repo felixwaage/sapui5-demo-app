@@ -1,6 +1,7 @@
 general:
   buildTool: mta
   verbose: true
+  productiveBranch: piperPipeline
 stages:
   'Release':
     cloudFoundryDeploy: true
