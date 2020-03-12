@@ -1,10 +1,12 @@
 general:
   buildTool: mta
   verbose: true
+stages:
+  'Release':
+    cloudFoundryDeploy: true
 steps:
   mtaBuild:
     buildTarget: 'CF'
-
   cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
     deployType: 'standard'
@@ -12,7 +14,6 @@ steps:
       org: 'cf-dts-integration-de'
       space: 'dev'
       credentialsId: 'CF_CREDENTIALSID'
-  
   karmaExecuteTests:
     dockerName: 'karma'
     sidecarImage: 'selenium/standalone-chrome'
