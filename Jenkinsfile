@@ -15,8 +15,9 @@ node() {
     }
 
     stage('Integration Tests'){
-        BackendIntegrationTest = load './.pipline/extension/Integration.groovy'
-        BackendIntegrationTest.call(this);
+        steps {
+            echo 'Integration Tests should happen here... lol'
+        }
     }
 
     stage('Deploy') {
