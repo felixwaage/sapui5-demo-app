@@ -19,6 +19,7 @@
     "@openui5/sap.ui.core": "^1.52.5",
     "@openui5/sap.ui.layout": "^1.52.5",
     "@openui5/themelib_sap_belize": "^1.52.5",
+    "fs": "0.0.1-security",
     "karma-coverage-istanbul-reporter": "^2.1.1"
   },
   "devDependencies": {
