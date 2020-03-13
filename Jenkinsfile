@@ -7,24 +7,23 @@ node() {
     }
 
     stage('Build') {
-        mtaBuild script: this
+        //mtaBuild script: this
+        echo 'build should happen here'
     }
 
     stage('Unit Tests'){
         //karmaExecuteTests script: this
-        steps{
-            echo 'Unit Tests should happen here... lol'
-        }
+        echo 'Unit Tests should happen here... lol'
     }
 
     stage('Integration Tests'){
-        steps {
-            echo 'Integration Tests should happen here... lol'
-        }
+        echo 'Integration Tests should happen here... lol'
+        sh 'npm run integration-test'
     }
 
     stage('Deploy') {
-        cloudFoundryDeploy script: this
+        //cloudFoundryDeploy script: this
+        echo 'deploy should happen here... lol'
     }
 }
 
