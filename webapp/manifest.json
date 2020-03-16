@@ -13,7 +13,6 @@
 		"ach": "ach",
 		"dataSources": {
 			"mainService": {
-				//"uri": "http://localhost:8081/services.odata.org/V2/Northwind/Northwind.svc/",
 				"uri": "https://services.odata.org/V3/northwind/northwind.svc/",
 				"type": "OData",
 				"settings": {
