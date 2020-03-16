@@ -12,7 +12,7 @@
     "test": "npm run lint && rimraf coverage && npm run karma-ci",
     "build": "rimraf dist && ui5 build --a",
     "proxy": "node proxy.js",
-    "integration-test": "node ./Integration/index.js"
+    "integration-test": "octt"
   },
   "dependencies": {
     "@openui5/sap.m": "^1.52.5",
