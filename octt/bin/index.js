@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var request = require('request');
 
@@ -6,25 +8,36 @@ var request = require('request');
 main();
 
 function main() {
+
+    var envSettings = loadConf();
+
     console.log("Start of SAPUI5 integration test modul... ok");
 
-    var xmlPath = "./Integration/manifest.json";
+    var xmlPath = envSettings.relativ_manifest_path;
     var xmlContent = fs.readFileSync(xmlPath, "utf8");
 
     var dataSources = getDataSourcesFromManifest(xmlContent);
-    checkODataService(dataSources, (results) => {
-        printOutTestResults(results);
-        rateTestResults(results);
-        console.log("BREAK POINT");
-    });
+    if(envSettings.tests.availability) { 
+        checkODataService(dataSources, (results) => {
+            printOutTestResults(results);
+            rateTestResults(results);
+            console.log("BREAK POINT");
+        }); 
+    }
 
+}
 
+function loadConf() {
+    var conf = fs.readFileSync("./Integration/config.json");
+    var confObj = JSON.parse(conf);
+    return confObj;
 }
 
 function printOutTestResults(oDataTestsResult){
     for(var i = 0; i < oDataTestsResult.length; i++){
         console.log('\n====================================================================');
-        console.log( 'OData Test Nr.' + i+1 );
+        var nr = i + 1;
+        console.log( 'OData Test Nr.' + nr );
         console.log( 'Data Source: ' + oDataTestsResult[i].name );
         console.log( 'Status Code: ' + oDataTestsResult[i].statusCode );
         console.log( 'Success: ' + oDataTestsResult[i].status )
@@ -113,7 +126,7 @@ function getDataSourcesFromManifest(file) {
 
 process.on('exit', (code) => {
     switch (code) {
-        case 0: console.log("\n\n====================================================================\nAll Tests successfull executet"); break;
+        case 0: console.log("\n\n====================================================================\nAll Tests successfull executed"); break;
         case 1: console.log("\n\n====================================================================\nOne or more tests failed"); break;
         default: console.log("\n\n====================================================================\nSomething went wrong: please see logging information"); break;
     }

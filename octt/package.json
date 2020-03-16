@@ -1,0 +1,22 @@
+{
+  "name": "sapui5-odata-comparsion-test-tool",
+  "version": "1.0.0",
+  "description": "A Tool to check if the used OData-Services provide all necessary data to the UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.wdf.sap.corp/D070317/SAPUI5-OData-Comparsion-Test-Tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "request": "^2.88.2"
+  },
+  "bin": {
+    "octt": "./bin/index.js"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "tests": {
+        "availability": true,
+        "entities": false,
+        "attribute": false
+    },
+    "relativ_manifest_path": "./webapp/manifest.json"
+}
