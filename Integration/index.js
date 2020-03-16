@@ -13,11 +13,22 @@ function main() {
 
     var dataSources = getDataSourcesFromManifest(xmlContent);
     checkODataService(dataSources, (results) => {
+        printOutTestResults(results);
         rateTestResults(results);
         console.log("BREAK POINT");
     });
 
 
+}
+
+function printOutTestResults(oDataTestsResult){
+    for(var i = 0; i < oDataTestsResult.length; i++){
+        console.log('\n====================================================================');
+        console.log( 'OData Test Nr.' + i+1 );
+        console.log( 'Data Source: ' + oDataTestsResult[i].name );
+        console.log( 'Status Code: ' + oDataTestsResult[i].statusCode );
+        console.log( 'Success: ' + oDataTestsResult[i].status )
+    }
 }
 
 function rateTestResults(oDataTestResults){
@@ -101,5 +112,9 @@ function getDataSourcesFromManifest(file) {
 // ============== some event handling ==========================
 
 process.on('exit', (code) => {
-    console.log(`About to exit with code: ${code}`);
+    switch (code) {
+        case 0: console.log("\n\n====================================================================\nAll Tests successfull executet"); break;
+        case 1: console.log("\n\n====================================================================\nOne or more tests failed"); break;
+        default: console.log("\n\n====================================================================\nSomething went wrong: please see logging information"); break;
+    }
 });
