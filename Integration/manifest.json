@@ -19,6 +19,14 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
 				}
+			},
+			"SecondService": {
+				"uri": "http://localhost:081/services.odata.org/V2/Northwind/Northwind.svc/Customers",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
 			}
 		}
 
