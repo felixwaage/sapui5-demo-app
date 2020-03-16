@@ -18,6 +18,7 @@ node() {
 
     stage('Integration Tests'){
         echo 'Begin of the Stage: Integration Test'
+        npmExecute script: this, dockerImage: 'node:8-stretch', npmCommand: 'install'
         npmExecute script: this, dockerImage: 'node:8-stretch', npmCommand: 'run integration-test'
     }
 
